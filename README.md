@@ -205,5 +205,5 @@ Nesta fase o foco será validar a arquitetura, a qualidade da conversa, a latên
 | Dev B | Pipeline de áudio, STT, streaming e gestão da comunicação em tempo real. |
 | Dev C | Integração do LLM, gestão de contexto e orquestração da conversa. |
 | Dev D | Sistema TTS, clonagem de voz, armazenamento e seleção das vozes. |
-| Dev E | Backend (FastAPI/Django), autenticação, APIs e persistência dos dados. |
+| Emerson Albino | Backend (FastAPI/Django), autenticação, APIs e persistência dos dados. |
 | Alassana Djigo | Infraestrutura, Docker, CI/CD, monitorização, testes e deploy. |
