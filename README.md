@@ -203,7 +203,7 @@ Nesta fase o foco será validar a arquitetura, a qualidade da conversa, a latên
 |--------|------------------|
 | Dev A | Frontend Web, interface de conversação, gestão das vozes clonadas e integração WebRTC. |
 | Dev B | Pipeline de áudio, STT, streaming e gestão da comunicação em tempo real. |
-| Dev C | Integração do LLM, gestão de contexto e orquestração da conversa. |
+| Arnaldo de Melo | Integração do LLM, gestão de contexto e orquestração da conversa. |
 | Dev D | Sistema TTS, clonagem de voz, armazenamento e seleção das vozes. |
 | Emerson Albino | Backend (FastAPI/Django), autenticação, APIs e persistência dos dados. |
 | Alassana Djigo | Infraestrutura, Docker, CI/CD, monitorização, testes e deploy. |
