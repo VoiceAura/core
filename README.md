@@ -201,7 +201,7 @@ Nesta fase o foco será validar a arquitetura, a qualidade da conversa, a latên
 
 | Pessoa | Responsabilidade |
 |--------|------------------|
-| Dev A | Frontend Web, interface de conversação, gestão das vozes clonadas e integração WebRTC. |
+| Dalson De Oliveira | Frontend Web, interface de conversação, gestão das vozes clonadas e integração WebRTC. |
 | Dev B | Pipeline de áudio, STT, streaming e gestão da comunicação em tempo real. |
 | Arnaldo de Melo | Integração do LLM, gestão de contexto e orquestração da conversa. |
 | Miguel Kumbi | Sistema TTS, clonagem de voz, armazenamento e seleção das vozes. |
