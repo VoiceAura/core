@@ -6,7 +6,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
-from models.voice import Voice
+from models.voice import Voice # noqa: F401
 from db.Base import Base
 
 # load variable from .env file to memory
