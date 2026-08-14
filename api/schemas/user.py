@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, EmailStr, field_serializer
+from pydantic import BaseModel, EmailStr, field_serializer
 from datetime import datetime
 
 class UserField(BaseModel):

@@ -1,9 +1,12 @@
 from datetime import datetime
-from typing import List
+from typing import List, TYPE_CHECKING
 from sqlalchemy import DateTime, String
 from sqlalchemy.orm import  Mapped, mapped_column, relationship
 from db.Base import Base
 
+
+if TYPE_CHECKING:
+  from models.user import User
 
 class Organization(Base):
   __tablename__ = "organizations"
