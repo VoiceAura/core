@@ -8,6 +8,8 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from models.voice import Voice # noqa: F401
+from models.organization import Organization # noqa: F401
+from models.user import User # noqa: F401
 from db.Base import Base
 
 from alembic import context
