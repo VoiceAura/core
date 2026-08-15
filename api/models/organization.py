@@ -1,14 +1,16 @@
 from datetime import datetime
-from typing import List, TYPE_CHECKING
+from typing import TYPE_CHECKING, List
+
 from sqlalchemy import DateTime, String
-from sqlalchemy.orm import  Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
 from db.Base import Base
 
-
 if TYPE_CHECKING:
-  from models.user import User
+  from models.user import UserModel
+  from models.voice_profile import VoiceProfileModel
 
-class Organization(Base):
+class OrganizationModel(Base):
   __tablename__ = "organizations"
 
   id: Mapped[int] = mapped_column(primary_key=True)
@@ -20,8 +22,10 @@ class Organization(Base):
                      default=lambda: datetime.now()
                      )
 
-  users: Mapped[List["User"]] = relationship(
-                     back_populates="organization",
-                     cascade="all, delete-orphan"
-                     )
+  users: Mapped[List["UserModel"]] = relationship(
+                              back_populates="organization",
+                              cascade="all, delete-orphan")
 
+  voice_profiles: Mapped[List["VoiceProfileModel"]] = relationship(
+                                                back_populates="organization",
+                                                cascade="all, delete-orphan")

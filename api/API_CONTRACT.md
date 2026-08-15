@@ -456,11 +456,11 @@ The system must allow users to:
 
 | Method | Endpoint | Handler | Description |
 | --- | --- | --- | --- |
-| **GET** | `/voices` | `get_voices` | List voices |
-| **GET** | `/voices/{voice_id}` | `get_voice` | Get voice |
-| **POST** | `/voices` | `create_voice` | Create voice profile |
-| **PUT** | `/voices/{voice_id}` | `update_voice` | Update voice |
-| **DELETE** | `/voices/{voice_id}` | `delete_voice` | Remove voice |
+| **GET** | `/voice-profiles` | `get_voices` | List voices |
+| **GET** | `/voice-profiles/{voice_id}` | `get_voice` | Get voice |
+| **POST** | `/voice-profiles` | `create_voice` | Create voice profile |
+| **PUT** | `/voice-profiles/{voice_id}` | `update_voice` | Update voice |
+| **DELETE** | `/voice-profiles/{voice_id}` | `delete_voice` | Remove voice |
 
 ---
 
@@ -500,8 +500,8 @@ VoiceProfile
 
 | Method | Endpoint | Handler |
 | --- | --- | --- |
-| **POST** | `/voices/{voice_id}/samples` | `create_voice_sample` |
-| **GET** | `/voices/{voice_id}/samples` | `get_voice_samples` |
+| **POST** | `/voice-profiles/{voice_id}/samples` | `create_voice_sample` |
+| **GET** | `/voice-profiles/{voice_id}/samples` | `get_voice_samples` |
 | **DELETE** | `/voice-samples/{sample_id}` | `delete_voice_sample` |
 
 ---

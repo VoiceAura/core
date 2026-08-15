@@ -1,18 +1,29 @@
 from fastapi import FastAPI
-from db.Session import get_db
-from routers.voice import voice_router
-from routers.organization import organization_router
-from routers.user import user_router
 
-app = FastAPI(title="VoiceAura API")
+from db.Session import get_db
+from routers.organization import router as organization_router
+from routers.user import router as user_router
+from routers.voice_profile import router as voice_profile_router
+from routers.voice_sample import router as voice_sample_router
+
+app = FastAPI(
+    title="VoiceAura API",
+    version="0.0.1"
+  )
+router_list = [
+                organization_router,
+                user_router,
+                voice_profile_router,
+                voice_sample_router
+                ]
 
 get_db()
 
 @app.get("/health")
-async def health() -> dict:
-  """Endpoint de verificacao -- confirma que a API esta viva."""
-  return {"status": "ok"}
+async def health() -> dict:  # type: ignore
+    """Endpoint de verificacao -- confirma que a API esta viva."""
+    return {"status": "ok"} # type: ignore
 
-app.include_router(voice_router, prefix="/voices")
-app.include_router(organization_router, prefix="/organizations")
-app.include_router(user_router, prefix="/users")
+for router in router_list:
+    app.include_router(router)
+

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, field_serializer
+from pydantic import BaseModel, ConfigDict, field_serializer
 from datetime import datetime
 
 class OrganizationField(BaseModel):
@@ -7,7 +7,7 @@ class OrganizationField(BaseModel):
   status: bool
   
   @field_serializer('name')
-  def serializer_name(name: str, _info) -> str:
+  def serializer_name(name: str, _info) -> str: # type: ignore
     return name.strip().upper()
 
 class OrganizationResponse(BaseModel):
@@ -17,8 +17,7 @@ class OrganizationResponse(BaseModel):
   status: bool
   created_at: datetime
  
-  class Config:
-    from_attributes: True
+  model_config = ConfigDict(from_attributes=True)
 
-  def serializer_dt(self, dt: datetime, _info):
+  def serializer_dt(self, dt: datetime, _info): # type: ignore
     return dt.strftime('%Y-%m-%dT%H:%M:%SZ')

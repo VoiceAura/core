@@ -1,14 +1,15 @@
 from datetime import datetime
-from sqlalchemy import DateTime, String, ForeignKey
-from sqlalchemy.orm import  Mapped, mapped_column, relationship
 from typing import TYPE_CHECKING
+
+from sqlalchemy import DateTime, ForeignKey, String
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
 from db.Base import Base
 
-
 if TYPE_CHECKING:
-  from models.organization import Organization
+  from models.organization import OrganizationModel
 
-class User(Base):
+class UserModel(Base):
   __tablename__ = "users"
 
   id: Mapped[int] = mapped_column(primary_key=True)
@@ -25,4 +26,4 @@ class User(Base):
                      default=lambda: datetime.now()
                      )
 
-  organization: Mapped["Organization"] = relationship(back_populates="users")
+  organization: Mapped["OrganizationModel"] = relationship(back_populates="users")
