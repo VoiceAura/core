@@ -6,9 +6,12 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+if not DATABASE_URL:
+  raise ValueError("Env variable DATABASE_URL not set")
+
 if DATABASE_URL:
   if DATABASE_URL.startswith("postgresql://"):
-    database_url = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://")
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://")
 
 engine = create_async_engine(DATABASE_URL)
 AsyncSessionLocal = async_sessionmaker(
@@ -16,3 +19,7 @@ AsyncSessionLocal = async_sessionmaker(
 	class_=AsyncSession,
 	expire_on_commit=False
 	)
+
+async def get_db():
+  async with AsyncSessionLocal() as db:
+    yield db
